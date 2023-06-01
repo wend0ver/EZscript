@@ -1,1 +1,1 @@
-# EZscript
+# EZscript programming language
