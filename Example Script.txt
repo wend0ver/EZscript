@@ -1,7 +1,13 @@
 window.size = 500,500;
 window.name = Example Script;
 
-if (true = true);
-window.render = 100,100,50,50;
+var 1 = -10;
 
-window.render = -100,-100,200,10;
+window.render = 0,0,50,50;
+
+func update;
+
+var 1 += 1;
+
+if ($1 = 20);
+window.clear;
