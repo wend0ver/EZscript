@@ -18,8 +18,13 @@ namespace EZscript
         string[] rawCodeList;
         string rawCode;
         string[] rawCodeLines;
-        
 
+        string[] vars = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", };
+
+        bool start = false;
+
+        bool update = false;
+        int updateLine = 0;
 
         public Form1()
         {
@@ -48,7 +53,7 @@ namespace EZscript
                 this.richTextBox1.Visible = false;
                 this.button1.Visible = false;
                 this.label1.Visible = false;
-
+                start = true;
                 runCode();
             }
             else
@@ -63,7 +68,8 @@ namespace EZscript
         void runCode()
         {
 
-            for (int i = 0; i < rawCodeList.Length; i++)
+
+            for (int i = updateLine; i < rawCodeList.Length; i++)
             {
 
                 realCode();
@@ -91,7 +97,14 @@ namespace EZscript
                     if (rawCodeList[i].Contains("window.name"))
                     {
 
-                        this.Text = rawCodeList[i].Split('=')[1].Trim(';');
+                        if (rawCodeList[i].Split('=')[1].Trim(';',' ').Contains('$'))
+                        {
+                            this.Text = Convert.ToString(vars[Convert.ToInt32(rawCodeList[i].Split('=')[1].Trim(';').Trim('$',' '))]);
+                        }
+                        else
+                        {
+                            this.Text = rawCodeList[i].Split('=')[1].Trim(';');
+                        }
 
                     }
 
@@ -111,6 +124,55 @@ namespace EZscript
 
                     }
 
+                    // Window Clear
+
+                    if (rawCodeList[i].Contains("window.clear"))
+                    {
+                        Graphics g = this.CreateGraphics();
+
+                        g.Clear(Color.White);
+
+                    }
+
+
+
+                    // Update
+                    if (rawCodeList[i].Contains("func update"))
+                    {
+                        if (update == false)
+                        {
+                            update = true;
+                            updateLine = i + 1;
+                        }
+                    }
+
+
+
+                    // Var
+
+                    if (rawCodeList[i].Contains("var"))
+                    {
+                        if (rawCodeList[i].Contains("+="))
+                        {
+                            vars.SetValue(
+                            Convert.ToString(
+
+                            Convert.ToInt32(vars[Convert.ToInt32(rawCodeList[i].Split('+')[0].Split('r')[1].Trim(' '))]) +  
+                            Convert.ToInt32(rawCodeList[i].Split('=')[1].Split(';')[0].Trim(' '))),
+
+                            Convert.ToInt32(rawCodeList[i].Split('=')[0].Split('r')[1].Trim(' ','+')));
+                        }
+                        else
+                        {
+                            vars.SetValue(
+                            Convert.ToString(rawCodeList[i].Split('=')[1].Split(';')[0].Trim(' ')),
+                            Convert.ToInt32(rawCodeList[i].Split('=')[0].Split('r')[1].Trim(' ')));
+                        }
+
+                    }
+
+
+
                 }
 
 
@@ -119,7 +181,18 @@ namespace EZscript
                 {
 
                     string ifA = rawCodeList[i].Split('(')[1].Split('=')[0].Trim(')', ' ');
+
+                    if (ifA.Contains("$"))
+                    {
+                        ifA = Convert.ToString(vars[Convert.ToInt32(rawCodeList[i].Split('=')[0].Split('(')[1].Trim(';','$', ' '))]);
+                    }
+
                     string ifB = rawCodeList[i].Split('(')[1].Split('=')[1].Trim(')', ' ');
+
+                    if (ifB.Contains("$"))
+                    {
+                        ifB = Convert.ToString(vars[Convert.ToInt32(rawCodeList[i].Split('=')[1].Split(')')[0].Trim(';', '$', ' '))]);  
+                    }
 
                     i++;
 
@@ -127,21 +200,22 @@ namespace EZscript
                     {
                         realCode();
                     }
-                    else
-                    {
-                        Console.WriteLine("false");
-                    }
 
 
                 }
+
+                
             }
-
-
-
-
+ 
 
         }
 
-
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (start == true && update == true)
+            {
+                runCode();
+            }
+        }
     }
 }
