@@ -1,0 +1,7 @@
+window.size = 500,500;
+window.name = Example Script;
+
+if (true = true);
+window.render = 100,100,50,50;
+
+window.render = -100,-100,200,10;
