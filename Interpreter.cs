@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -186,10 +187,16 @@ namespace EZscript
                             vars.SetValue(
                             Convert.ToString(
 
-                            Convert.ToInt32(vars[Convert.ToInt32(rawCodeList[i].Split('+')[0].Split('r')[1].Trim(' '))]) +  
+                            Convert.ToInt32(vars[Convert.ToInt32(rawCodeList[i].Split('+')[0].Split('r')[1].Trim(' '))]) +
                             Convert.ToInt32(rawCodeList[i].Split('=')[1].Split(';')[0].Trim(' '))),
 
-                            Convert.ToInt32(rawCodeList[i].Split('=')[0].Split('r')[1].Trim(' ','+')));
+                            Convert.ToInt32(rawCodeList[i].Split('=')[0].Split('r')[1].Trim(' ', '+')));
+                        }
+                        else if (rawCodeList[i].Contains("$"))
+                        {
+                            vars.SetValue(
+                            vars[Convert.ToInt32(rawCodeList[i].Split('=')[1].Split(';')[0].Trim(' ', '$'))],
+                            Convert.ToInt32(rawCodeList[i].Split('=')[0].Split('r')[1].Trim(' ')));
                         }
                         else
                         {
