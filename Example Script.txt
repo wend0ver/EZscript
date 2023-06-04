@@ -13,15 +13,27 @@ func update;
 window.clear;
 
 if (input.w);
-var 2 += 2;
+var 2 += 1;
 
 if (input.s);
-var 2 += -2;
+var 2 += -1;
 
 if (input.a);
-var 1 += -2;
+var 1 += -1;
 
 if (input.d);
-var 1 += 2;
+var 1 += 1;
+
+if ($1 = -247);
+var 1 = -246;
+
+if ($1 = 231);
+var 1 = 230;
+
+if ($2 = 247);
+var 2 = 246;
+
+if ($2 = -207);
+var 2 = -206;
 
 window.render = $1,$2,$3,$3;
