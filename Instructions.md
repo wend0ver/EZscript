@@ -16,6 +16,8 @@
 (only works with number values)
 # $#
 (gets varible data)
+# if (input.Letter)
+(runs code it letter is down)
 #
 #
 # All lines must end in a ;
