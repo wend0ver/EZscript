@@ -14,6 +14,8 @@
 (All code bellow will be ran every 100ms)
 # var varible# += Number Added To Old Value; 
 (only works with number values)
+# $#
+(gets varible data)
 #
 #
 # All lines must end in a ;
