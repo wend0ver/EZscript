@@ -4,10 +4,12 @@
 #
 # Functions:
 # if ( Value = Value );
+
 # window.size = sizeX, sizeY;
 # window.name = Name;
 # window.render = posX, posY, sizeX, sizeY;
 # var name = value;
+(only works with =)
 (name must be a number 1-30)
 # window.clear;
 # func update;
@@ -16,7 +18,7 @@
 (only works with number values)
 # $#
 (gets varible data)
-# if (input.Letter)
+# if (input.Letter);
 (runs code it letter is down)
 #
 #
