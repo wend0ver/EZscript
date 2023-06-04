@@ -4,9 +4,11 @@ window.name = Example Script;
 
 var 1 = 0;
 
-var 2 = 0;
+var 2 = -50;
 
 var 3 = 0;
+
+var 4 = 50;
 
 func update;
 
@@ -14,7 +16,7 @@ window.clear;
 
 var 1 += 2;
 
-window.render = $2,0,$1,$1;
+window.render = $2,$4,$1,$1;
 
 if ($1 = 50);
 var 3 += 1;
@@ -23,10 +25,16 @@ if ($1 = 50);
 var 2 += 50;
 
 if ($1 = 50);
+var 4 += -50;
+
+if ($1 = 50);
 var 1 = 0;
 
-if ($3 = 5);
-var 2 = 0;
+if ($3 = 3);
+var 4 = 50;
 
-if ($3 = 5);
+if ($3 = 3);
+var 2 = -50;
+
+if ($3 = 3);
 var 3 = 0;
