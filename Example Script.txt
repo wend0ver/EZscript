@@ -24,7 +24,4 @@ var 1 += -2;
 if (input.d);
 var 1 += 2;
 
-if (input.p);
-var 3 += 1;
-
 window.render = $1,$2,$3,$3;
