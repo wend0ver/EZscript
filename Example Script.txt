@@ -2,41 +2,29 @@ window.size = 500,500;
 
 window.name = Example Script;
 
+
 var 1 = 0;
+var 2 = 0;
 
-var 2 = -50;
-
-var 3 = 0;
-
-var 4 = 50;
-
-var 5 = 100;
+var 3 = 10;
 
 func update;
 
 window.clear;
 
-var 1 += 1;
+if (input.w);
+var 2 += 2;
 
-window.render = $2,$4,$1,$1;
+if (input.s);
+var 2 += -2;
 
-if ($1 = $5);
+if (input.a);
+var 1 += -2;
+
+if (input.d);
+var 1 += 2;
+
+if (input.p);
 var 3 += 1;
 
-if ($1 = $5);
-var 2 += 50;
-
-if ($1 = $5);
-var 4 += -50;
-
-if ($1 = $5);
-var 1 = 0;
-
-if ($3 = 3);
-var 4 = 50;
-
-if ($3 = 3);
-var 2 = -50;
-
-if ($3 = 3);
-var 3 = 0;
+window.render = $1,$2,$3,$3;
