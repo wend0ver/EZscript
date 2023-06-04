@@ -1,14 +1,14 @@
-window.size = 500,500;
-
 window.name = Example Script;
-
+window.size = 500,500;
 
 var 1 = 0;
 var 2 = 0;
 
 var 3 = 10;
 
+
 func update;
+
 
 window.clear;
 
