@@ -7,7 +7,8 @@
 # window.size = sizeX, sizeY;
 # window.name = Name;
 # window.render = posX, posY, sizeX, sizeY;
-# var varible# = value;
+# var name = value;
+(name must be a number 1-30)
 # window.clear;
 # func update;
 (All code bellow will be ran every 100ms)
