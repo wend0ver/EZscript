@@ -106,10 +106,46 @@ namespace EZscript
                     if (rawCodeList[i].Contains("window.render"))
                     {
 
-                        int posX = int.Parse(rawCodeList[i].Split('=')[1].Split(',')[0].Trim(' '));
-                        int posY = int.Parse(rawCodeList[i].Split('=')[1].Split(',')[1].Trim(' '));
-                        int sizeX = int.Parse(rawCodeList[i].Split('=')[1].Split(',')[2].Trim(' '));
-                        int sizeY = int.Parse(rawCodeList[i].Split('=')[1].Split(',')[3].Trim(' '));
+                        int posX;
+                        int posY;
+                        int sizeX;
+                        int sizeY;
+
+                        if (rawCodeList[i].Split('=')[1].Split(',')[0].Trim(' ').Contains('$'))
+                        {
+                            posX = Convert.ToInt32(vars[int.Parse(rawCodeList[i].Split('=')[1].Split(',')[0].Trim(' ','$'))]);
+                        }
+                        else
+                        {
+                            posX = int.Parse(rawCodeList[i].Split('=')[1].Split(',')[0].Trim(' '));
+                        }
+                        ///////////////////////////
+                        if (rawCodeList[i].Split('=')[1].Split(',')[1].Trim(' ').Contains('$'))
+                        {
+                            posY = Convert.ToInt32(vars[int.Parse(rawCodeList[i].Split('=')[1].Split(',')[1].Trim(' ', '$'))]);
+                        }
+                        else
+                        {
+                            posY = int.Parse(rawCodeList[i].Split('=')[1].Split(',')[1].Trim(' '));
+                        }
+                        ///////////////////////////
+                        if (rawCodeList[i].Split('=')[1].Split(',')[2].Trim(' ').Contains('$'))
+                        {
+                            sizeX = Convert.ToInt32(vars[int.Parse(rawCodeList[i].Split('=')[1].Split(',')[2].Trim(' ', '$'))]);
+                        }
+                        else
+                        {
+                            sizeX = int.Parse(rawCodeList[i].Split('=')[1].Split(',')[2].Trim(' '));
+                        }
+                        ///////////////////////////
+                        if (rawCodeList[i].Split('=')[1].Split(',')[3].Trim(' ').Contains('$'))
+                        {
+                            sizeY = Convert.ToInt32(vars[int.Parse(rawCodeList[i].Split('=')[1].Split(',')[3].Trim(' ', '$'))]);
+                        }
+                        else
+                        {
+                            sizeY = int.Parse(rawCodeList[i].Split('=')[1].Split(',')[3].Trim(' '));
+                        }
 
                         Graphics g = this.CreateGraphics();
 
