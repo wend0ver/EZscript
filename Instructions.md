@@ -11,7 +11,7 @@
 (name must be a number 1-30)
 # window.clear;
 # func update;
-(All code bellow will be ran every 100ms)
+(All code bellow will be ran every 10ms)
 # var varible# += Number Added To Old Value; 
 (only works with number values)
 # $#
