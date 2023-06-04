@@ -36,10 +36,11 @@ namespace EZscript
         public void button1_Click(object sender, EventArgs e)
         {
 
-            if (this.richTextBox1.Text.EndsWith(".txt"))
+            if (this.richTextBox1.Text.Trim('"').EndsWith(".txt"))
             {
                 string fileLocation = this.richTextBox1.Text;
                 fileLocation.Replace("\\", "/");
+                fileLocation = fileLocation.Trim('"');
                 rawCode = File.ReadAllText(fileLocation);
                 rawCodeList = rawCode.Split(';');
                 this.richTextBox1.Visible = false;
