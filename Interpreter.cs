@@ -478,11 +478,12 @@ namespace EZscript
 
 
                 // If
-                if (rawCodeList[i].Contains("if"))
+                if (rawCodeList[i].Contains("if") || rawCodeList[i].Contains("ifAnd"))
                 {
                     bool ifWork = false;
                     string ifA=  "";
                     string ifB = "";
+                    string ifC = "";
 
                     int num = 0;
 
@@ -523,13 +524,34 @@ namespace EZscript
                             ifB = Convert.ToString(vars[Convert.ToInt32(rawCodeList[i].Split('=')[1].Split(')')[0].Trim(';', '$', ' '))]);
                         }
 
-                        if (ifA == ifB)
+                        if (rawCodeList[i].Contains("ifAnd"))
                         {
-                            i++;
-                            ifWork = true;
-                            realCode();
+
+                            ifC = rawCodeList[i].Split('(')[1].Split('=')[1].Trim(')', ' ');
+
+                            if (ifC.Contains("$"))
+                            {
+                                ifC = Convert.ToString(vars[Convert.ToInt32(rawCodeList[i].Split('=')[2].Split(')')[0].Trim(';', '$', ' '))]);
+                            }
+
                         }
 
+                        if (rawCodeList[i].Contains("ifAnd"))
+                        {
+                            if (ifA == ifB && ifA == ifC && ifB == ifC)
+                            {
+                                i++;
+                                ifWork = true;
+                                realCode();
+                            }
+                        } else {
+                            if (ifA == ifB)
+                            {
+                                i++;
+                                ifWork = true;
+                                realCode();
+                            }
+                        }
                     }
 
                     if (ifWork == false)
