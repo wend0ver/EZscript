@@ -4,6 +4,7 @@
 #
 # Functions:
 # if ( Value = Value );
+# ifAnd ( Value = Value = Value );
 
 # window.size = sizeX, sizeY;
 # window.name = Name;
