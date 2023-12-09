@@ -1,39 +1,114 @@
-window.name = Example Script;
+window.name = Flappy Square;
 window.size = 500,500;
 
 var 1 = 0;
 var 2 = 0;
 
 var 3 = 10;
+var 4 = 10;
 
+var 5 = 0;
+
+
+var 6 = 300;
+var 9 = 40;
+
+var 11 = 1;
+
+var 12 = 0;
 
 func update;
 
-
 window.clear;
+window.render = 0,0,500,500,blue;
 
 if (input.w);
-var 2 += 1;
+var 5 += 5;
+if (input.w);
+var 11 += 1;
 
-if (input.s);
-var 2 += -1;
+if (input.space);
+var 5 += 5;
+if (input.space);
+var 11 += 1;
 
-if (input.a);
-var 1 += -1;
+if ($11 = 9);
+var 11 = 1;
 
-if (input.d);
-var 1 += 1;
+var 5 += -3;
 
-if ($1 = -247);
-var 1 = -246;
+if ($5 = -15);
+var 5 = -15;
+if ($5 = -16);
+var 5 = -15;
+if ($5 = -17);
+var 5 = -15;
 
-if ($1 = 231);
-var 1 = 230;
+var 2 = $5;
 
-if ($2 = 247);
-var 2 = 246;
+var 7 = $9;
+var 7 += 300;
 
-if ($2 = -207);
-var 2 = -206;
+var 8 = $9;
+var 8 += -300;
 
-window.render = $1,$2,$3,$3;
+var 6 += -2;
+
+if ($6 = -270);
+var 9 = $12;
+
+if ($6 = -270);
+var 6 = 230;
+
+if ($11 = 1);
+var 12 = 150;
+if ($11 = 2);
+var 12 = 100;
+if ($11 = 3);
+var 12 = 50;
+if ($11 = 4);
+var 12 = 10;
+var 12 = -10;
+if ($11 = 6);
+var 12 = -50;
+if ($11 = 7);
+var 12 = -100;
+if ($11 = 8);
+var 12 = -150;
+
+var 13 = false;
+touching = ($1,$2,$3,$4|$6,$7,30,500);
+var 13 = true;
+touching = ($1,$2,$3,$4|$6,$8,30,500);
+var 13 = true;
+touching = ($1,$2,$3,$4|0,-200,500,20);
+var 13 = true;
+touching = ($1,$2,$3,$4|0,250,500,20);
+var 13 = true;
+
+if ($13 = true);
+var 1 = 0;
+if ($13 = true);
+var 2 = 0;
+if ($13 = true);
+var 3 = 10;
+if ($13 = true);
+var 4 = 10;
+if ($13 = true);
+var 5 = 0;
+if ($13 = true);
+var 6 = 300;
+if ($13 = true);
+var 9 = 40;
+if ($13 = true);
+var 11 = 1;
+if ($13 = true);
+var 12 = 0;
+if ($13 = true);
+var 13 = false;
+
+window.render = $1,$2,$3,$4,yellow;
+window.render = $6,$7,30,500,green;
+window.render = $6,$8,30,500,green;
+window.render = 0,-200,500,20,green;
+window.render = 0,250,500,20,black;
