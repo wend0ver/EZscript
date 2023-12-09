@@ -24,4 +24,5 @@
 #
 #
 # All lines must end in a ;
-# You cannot write documentation
+# toching = (#,#,#,#|#,#,#,#);
+(checks if two rectangles are overlaping)
