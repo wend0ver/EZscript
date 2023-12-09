@@ -376,6 +376,12 @@ namespace EZscript
                         int posY;
                         int sizeX;
                         int sizeY;
+                        string color;
+                        Brush brushColor = Brushes.Black;
+
+                        Graphics g = this.CreateGraphics();
+
+
 
                         if (rawCodeList[i].Split('=')[1].Split(',')[0].Trim(' ').Contains('$'))
                         {
@@ -413,9 +419,47 @@ namespace EZscript
                             sizeY = int.Parse(rawCodeList[i].Split('=')[1].Split(',')[3].Trim(' '));
                         }
 
-                        Graphics g = this.CreateGraphics();
+                        color = rawCodeList[i].Split('=')[1].Split(',')[4].Trim(' ').Trim(';');
 
-                        g.FillRectangle(Brushes.Black, new Rectangle(posX + (this.Size.Width / 2) - (sizeX / 2), -posY + (this.Size.Height / 2) - (sizeY / 2), sizeX, sizeY));
+                        if (color == "black")
+                        {
+                            brushColor = Brushes.Black;
+                        } else if (color == "red")
+                        {
+                            brushColor = Brushes.Red;
+                        }
+                        else if (color == "orange")
+                        {
+                            brushColor = Brushes.Orange;
+                        }
+                        else if (color == "yellow")
+                        {
+                            brushColor = Brushes.Yellow;
+                        }
+                        else if (color == "green")
+                        {
+                            brushColor = Brushes.Green;
+                        }
+                        else if (color == "blue")
+                        {
+                            brushColor = Brushes.Blue;
+                        }
+                        else if (color == "purple")
+                        {
+                            brushColor = Brushes.Purple;
+                        }
+                        else if (color == "white")
+                        {
+                            brushColor = Brushes.White;
+                        } else if (color == "gray")
+                        {
+                            brushColor = Brushes.Gray;
+                        } else if (color == "aqua")
+                        {
+                            brushColor = Brushes.Aqua;
+                        }
+
+                        g.FillRectangle(brushColor, new Rectangle(posX + (this.Size.Width / 2) - (sizeX / 2), -posY + (this.Size.Height / 2) - (sizeY / 2), sizeX, sizeY));
 
                     }
 
@@ -561,7 +605,133 @@ namespace EZscript
 
                 }
 
-                
+                // touching
+                if (rawCodeList[i].Contains("touching"))
+                {
+                    //touching (#,#,#,#|#,#,#,#);
+
+                    bool ifWork = false;
+
+                    int x1;
+                    int y1;
+                    int xSize1;
+                    int ySize1;
+                    int x2;
+                    int y2;
+                    int xSize2;
+                    int ySize2;
+
+                    string STRINGx1 = rawCodeList[i].Split('(')[1].Split('|')[0].Trim(')', ' ','(').Split(',')[0];
+                    string STRINGy1 = rawCodeList[i].Split('(')[1].Split('|')[0].Trim(')', ' ', '(').Split(',')[1];
+                    string STRINGxSize1 = rawCodeList[i].Split('(')[1].Split('|')[0].Trim(')', ' ', '(').Split(',')[2];
+                    string STRINGySize1 = rawCodeList[i].Split('(')[1].Split('|')[0].Trim(')', ' ', '(').Split(',')[3];
+
+                    string STRINGx2 = rawCodeList[i].Split('(')[1].Split('|')[1].Trim(')', ' ', '(').Split(',')[0];
+                    string STRINGy2 = rawCodeList[i].Split('(')[1].Split('|')[1].Trim(')', ' ', '(').Split(',')[1];
+                    string STRINGxSize2 = rawCodeList[i].Split('(')[1].Split('|')[1].Trim(')', ' ', '(').Split(',')[2];
+                    string STRINGySize2 = rawCodeList[i].Split('(')[1].Split('|')[1].Trim(')', ' ', '(').Split(',')[3];
+
+                    if (STRINGx1.Contains('$'))
+                    {
+                        x1 = Convert.ToInt32(vars[Convert.ToInt32(STRINGx1.Trim('$'))]);
+                    } else
+                    {
+                        x1 = Convert.ToInt32(STRINGx1);
+                    }
+
+                    if (STRINGy1.Contains('$'))
+                    {
+                        y1 = Convert.ToInt32(vars[Convert.ToInt32(STRINGy1.Trim('$'))]);
+                    }
+                    else
+                    {
+                        y1 = Convert.ToInt32(STRINGy1);
+                    }
+
+                    if (STRINGxSize1.Contains('$'))
+                    {
+                        xSize1 = Convert.ToInt32(vars[Convert.ToInt32(STRINGxSize1.Trim('$'))]);
+                    }
+                    else
+                    {
+                        xSize1 = Convert.ToInt32(STRINGxSize1);
+                    }
+
+                    if (STRINGySize1.Contains('$'))
+                    {
+                        ySize1 = Convert.ToInt32(vars[Convert.ToInt32(STRINGySize1.Trim('$'))]);
+                    }
+                    else
+                    {
+                        ySize1 = Convert.ToInt32(STRINGySize1);
+                    }
+
+                    if (STRINGx2.Contains('$'))
+                    {
+                        x2 = Convert.ToInt32(vars[Convert.ToInt32(STRINGx2.Trim('$'))]);
+                    }
+                    else
+                    {
+                        x2 = Convert.ToInt32(STRINGx2);
+                    }
+
+                    if (STRINGy2.Contains('$'))
+                    {
+                        y2 = Convert.ToInt32(vars[Convert.ToInt32(STRINGy2.Trim('$'))]);
+                    }
+                    else
+                    {
+                        y2 = Convert.ToInt32(STRINGy2);
+                    }
+
+                    if (STRINGxSize2.Contains('$'))
+                    {
+                        xSize2 = Convert.ToInt32(vars[Convert.ToInt32(STRINGxSize2.Trim('$'))]);
+                    }
+                    else
+                    {
+                        xSize2 = Convert.ToInt32(STRINGxSize2);
+                    }
+
+                    if (STRINGySize2.Contains('$'))
+                    {
+                        ySize2 = Convert.ToInt32(vars[Convert.ToInt32(STRINGySize2.Trim('$'))]);
+                    }
+                    else
+                    {
+                        ySize2 = Convert.ToInt32(STRINGySize2);
+                    }
+
+
+                    // Calculate the boundaries of the rectangles
+                    float left1 = x1 - xSize1 / 2;
+                    float right1 = x1 + xSize1 / 2;
+                    float top1 = y1 - ySize1 / 2;
+                    float bottom1 = y1 + ySize1 / 2;
+
+                    float left2 = x2 - xSize2 / 2;
+                    float right2 = x2 + xSize2 / 2;
+                    float top2 = y2 - ySize2 / 2;
+                    float bottom2 = y2 + ySize2 / 2;
+
+                    bool touching = !(left1 > right2 || right1 < left2 || top1 > bottom2 || bottom1 < top2);
+
+
+                    if (touching == true)
+                    {
+                        i++;
+                        ifWork = true;
+                        realCode();
+                    }
+                       
+                    if (ifWork == false)
+                    {
+                        i++;
+                    }
+
+                }
+
+
             }
  
 
