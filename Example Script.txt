@@ -22,6 +22,8 @@ func update;
 window.clear;
 window.render = 0,0,500,500,blue;
 
+INPUT;
+
 if (input.w);
 var 5 += 5;
 if (input.w);
@@ -36,6 +38,8 @@ if ($11 = 9);
 var 11 = 1;
 
 var 5 += -3;
+
+LOOP;
 
 if ($5 = -15);
 var 5 = -15;
@@ -60,6 +64,8 @@ var 9 = $12;
 if ($6 = -270);
 var 6 = 230;
 
+RNG;
+
 if ($11 = 1);
 var 12 = 150;
 if ($11 = 2);
@@ -75,6 +81,8 @@ if ($11 = 7);
 var 12 = -100;
 if ($11 = 8);
 var 12 = -150;
+
+DETECTION;
 
 var 13 = false;
 touching = ($1,$2,$3,$4|$6,$7,30,500);
@@ -106,6 +114,8 @@ if ($13 = true);
 var 12 = 0;
 if ($13 = true);
 var 13 = false;
+
+RENDER;
 
 window.render = $1,$2,$3,$4,yellow;
 window.render = $6,$7,30,500,green;
