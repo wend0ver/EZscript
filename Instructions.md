@@ -8,7 +8,7 @@
 
 # window.size = sizeX, sizeY;
 # window.name = Name;
-# window.render = posX, posY, sizeX, sizeY;
+# window.render = posX, posY, sizeX, sizeY, color;
 # var name = value;
 (only works with =)
 (name must be a number 1-30)
