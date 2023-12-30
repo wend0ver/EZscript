@@ -1,3 +1,5 @@
+EZscript is discontinued as of right now
+
 # EZscript programming language
 #
 # EZscript can interpret and run code
