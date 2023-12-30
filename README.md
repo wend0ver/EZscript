@@ -1,4 +1,4 @@
-EZscript is discontinued as of right now
+⚠️EZscript is discontinued as of right now⚠️
 
 # EZscript programming language
 #
