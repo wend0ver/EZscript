@@ -1,0 +1,11 @@
+C:\Users\Liams\source\repos\EZscript\EZscript\bin\Debug\EZscript.exe.config
+C:\Users\Liams\source\repos\EZscript\EZscript\bin\Debug\EZscript.exe
+C:\Users\Liams\source\repos\EZscript\EZscript\bin\Debug\EZscript.pdb
+C:\Users\Liams\source\repos\EZscript\EZscript\obj\Debug\EZscript.csproj.AssemblyReference.cache
+C:\Users\Liams\source\repos\EZscript\EZscript\obj\Debug\EZscript.csproj.SuggestedBindingRedirects.cache
+C:\Users\Liams\source\repos\EZscript\EZscript\obj\Debug\EZscript.Form1.resources
+C:\Users\Liams\source\repos\EZscript\EZscript\obj\Debug\EZscript.Properties.Resources.resources
+C:\Users\Liams\source\repos\EZscript\EZscript\obj\Debug\EZscript.csproj.GenerateResource.cache
+C:\Users\Liams\source\repos\EZscript\EZscript\obj\Debug\EZscript.csproj.CoreCompileInputs.cache
+C:\Users\Liams\source\repos\EZscript\EZscript\obj\Debug\EZscript.exe
+C:\Users\Liams\source\repos\EZscript\EZscript\obj\Debug\EZscript.pdb

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZscript", "EZscript\EZscript.csproj", "{1CE74ADF-F640-4DF8-B708-E396DECEF2DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CE74ADF-F640-4DF8-B708-E396DECEF2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CE74ADF-F640-4DF8-B708-E396DECEF2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CE74ADF-F640-4DF8-B708-E396DECEF2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CE74ADF-F640-4DF8-B708-E396DECEF2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {449CB37B-EB1A-4E23-A539-D72E2B7D807B}
+	EndGlobalSection
+EndGlobal
